@@ -1,0 +1,63 @@
+﻿<table id="accountsTable" class="styled-table">
+    <!-- Populate this table dynamically -->
+</table>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+
+<style>
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+    .styled-table th, .styled-table td {
+        padding: 12px 15px;
+    }
+    .styled-table th {
+        background-color: #009879;
+        color: #ffffff;
+    }
+    .styled-table tr {
+        border-bottom: 1px solid #dddddd;
+        cursor: pointer; /* Make the entire row clickable */
+    }
+    .styled-table tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    .styled-table tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+    .styled-table tr.active-row {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $.getJSON("/api/accounts/top-level-accounts", function(data) {
+            var tableContent = "<tr><th>Top Level Account</th><th>Total Balance</th></tr>";
+            $.each(data, function(accountNumber, balance) {
+                tableContent += "<tr data-account-number='" + accountNumber + "'>";
+                tableContent += "<td>" + accountNumber + "</td>";
+                tableContent += "<td>" + balance + "</td>";
+                tableContent += "</tr>";
+            });
+            $("#accountsTable").html(tableContent);
+        });
+
+        $("#accountsTable").on("click", "tr", function() {
+            var accountNumber = $(this).data("account-number");
+
+            $("#accountsTable tr").removeClass("active-row");
+
+            $(this).addClass("active-row");
+
+            $.getJSON("/api/accounts/account-details/" + accountNumber, function(details) {
+                var message = details.join("\n");
+                alert(message);
+            });
+        });
+    });
+</script>

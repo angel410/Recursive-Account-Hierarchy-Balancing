@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microtech_Task", "Microtech_Task\Microtech_Task.csproj", "{1798310B-07C4-45AF-8738-5E85EDE99B5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1798310B-07C4-45AF-8738-5E85EDE99B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1798310B-07C4-45AF-8738-5E85EDE99B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1798310B-07C4-45AF-8738-5E85EDE99B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1798310B-07C4-45AF-8738-5E85EDE99B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8632714-3A97-41F8-98D1-5F2BCED819E5}
+	EndGlobalSection
+EndGlobal
